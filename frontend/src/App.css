@@ -1,0 +1,211 @@
+/* ═══════════════════════════════════════════════════════════
+   APP SHELL
+═══════════════════════════════════════════════════════════ */
+.app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TOP BAR
+═══════════════════════════════════════════════════════════ */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  z-index: 100;
+  gap: 12px;
+}
+
+/* Brand */
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.brand-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.brand-ai {
+  color: var(--gold);
+}
+
+.brand-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  padding-left: 2px;
+  display: block;
+  margin-top: 1px;
+}
+
+/* Center controls */
+.topbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.page-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 4px 14px;
+}
+
+.ctrl-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.ctrl-btn:hover {
+  color: var(--gold);
+  background: var(--gold-dim);
+}
+
+.zoom-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  min-width: 40px;
+  text-align: center;
+}
+
+.ctrl-divider {
+  width: 1px;
+  height: 16px;
+  background: var(--border);
+  margin: 0 4px;
+}
+
+.page-indicator {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.page-indicator strong {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Right side */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.file-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-light);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  max-width: 340px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clear-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(192, 74, 74, 0.1);
+  border: 1px solid rgba(192, 74, 74, 0.3);
+  color: #e07070;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-family: 'Crimson Pro', serif;
+  letter-spacing: 0.04em;
+  padding: 4px 11px;
+  border-radius: 6px;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.clear-btn:hover {
+  background: rgba(192, 74, 74, 0.2);
+  border-color: rgba(192, 74, 74, 0.55);
+  color: #f08888;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MAIN SPLIT
+═══════════════════════════════════════════════════════════ */
+.main-split {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.pdf-pane {
+  flex: 0 0 60%;
+  min-width: 0;
+  overflow: hidden;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.resizer {
+  width: 0;
+  flex-shrink: 0;
+}
+
+.chat-pane {
+  flex: 0 0 40%;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary);
+}
+
+@media (max-width: 900px) {
+  .main-split { flex-direction: column; }
+  .pdf-pane   { flex: 0 0 55%; border-right: none; border-bottom: 1px solid var(--border); }
+  .chat-pane  { flex: 0 0 45%; }
+  .brand-tagline { display: none; }
+}

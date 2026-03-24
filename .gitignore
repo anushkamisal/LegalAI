@@ -1,0 +1,31 @@
+# Ignore everything
+*
+
+# Allow folders (so Git can go inside them)
+!backend/
+!frontend/
+
+# Allow backend files
+!backend/main.py
+!backend/requirements.txt
+
+# Allow frontend structure
+!frontend/src/
+!frontend/public/
+
+# Allow specific frontend files
+!frontend/src/App.jsx
+!frontend/src/components/
+!frontend/src/components/ChatPanel.jsx
+!frontend/src/components/PDFViewer.jsx
+!frontend/src/components/UploadScreen.jsx
+!frontend/src/App.css
+!frontend/src/index.css
+!frontend/src/main.jsx
+
+!frontend/package.json
+!frontend/vite.config.js
+!frontend/index.html
+
+# Allow gitignore itself
+!.gitignore

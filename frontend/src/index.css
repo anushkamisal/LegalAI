@@ -1,0 +1,93 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-primary: #090b12;
+  --bg-secondary: #0d1020;
+  --bg-tertiary: #131628;
+  --bg-card: #181c2e;
+  --bg-card-hover: #1e223a;
+  --border: #252a45;
+  --border-subtle: #1c2038;
+  --gold: #c9a84c;
+  --gold-light: #e2c070;
+  --gold-dim: rgba(201, 168, 76, 0.12);
+  --gold-glow: rgba(201, 168, 76, 0.25);
+  --gold-border: rgba(201, 168, 76, 0.35);
+  --text-primary: #ecedf7;
+  --text-secondary: #9aa2c0;
+  --text-muted: #555d7a;
+  --text-gold: #c9a84c;
+  --highlight-bg: rgba(201, 168, 76, 0.28);
+  --success: #3d9e6e;
+  --error: #c04a4a;
+  --scrollbar-thumb: #252a45;
+  --scrollbar-track: #0d1020;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Crimson Pro', Georgia, serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border); }
+
+/* ─── Keyframes ─────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes highlightFlash {
+  0%   { background: rgba(201, 168, 76, 0.55); }
+  60%  { background: rgba(201, 168, 76, 0.22); }
+  100% { background: rgba(201, 168, 76, 0.32); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40%            { transform: scale(1);   opacity: 1; }
+}
+
+/* ─── PDF Highlight ─────────────────────────────────── */
+.pdf-text-highlight {
+  background: rgba(201, 168, 76, 0.35) !important;
+  border-radius: 2px;
+  padding: 0 1px;
+  animation: highlightFlash 1.4s ease-out forwards;
+}
